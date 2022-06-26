@@ -1,0 +1,102 @@
+<style>
+    .pointer {
+        cursor: pointer;
+    }
+</style>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 col-sm-3">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-success text-white text-uppercase">Search</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchStr">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button" (click)="onSearch()">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-success text-white text-uppercase">Categories</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="selCategory" class="font-weight-bold">Select Category</label>
+                                <ul style="list-style-type:none;">
+                                    <li *ngFor="let cat of categoryList" class="pointer" (click)="onSelectCat(cat)">{{cat}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 pb-4">
+
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-success text-white text-uppercase">People</div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Birth Year</th>
+                                        <th>Height</th>
+                                        <th>Mass</th>
+                                        <th>Hair Color</th>
+                                        <th>Skin Color</th>
+                                        <th>Eye Color</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let p of people">
+                                        <td>{{p.name}}</td>
+                                        <td>{{p.gender}}</td>
+                                        <td>{{p.birth_year}}</td>
+                                        <td>{{p.height}}</td>
+                                        <td>{{p.mass}}</td>
+                                        <td>{{p.hair_color}}</td>
+                                        <td>{{p.skin_color}}</td>
+                                        <td>{{p.eye_color}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 pb-4">
+                    <h4 style="font-style:italic">{{joke}}</h4>
+                    <ul>
+                        <li *ngFor="let joke of jokeList">{{joke.value}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
